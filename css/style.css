@@ -184,7 +184,7 @@ body {
   transform: translate(-50%, -50%);
   top: 50%;
   margin-left: 98%;
-  background: url("../img/swipSwap.svg") no-repeat;
+  background: url("../img/SwipSwap.svg") no-repeat;
   background-size: contain;
 }
 .txtBase {
