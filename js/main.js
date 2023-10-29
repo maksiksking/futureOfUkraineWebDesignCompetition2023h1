@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const string1 = document.getElementById("string1")
 
+  const string1 = document.getElementById("string1")
   let e = window.event
   let kPre
 
