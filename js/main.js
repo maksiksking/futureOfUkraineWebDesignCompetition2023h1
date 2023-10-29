@@ -306,10 +306,10 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTo(0, window.screen.height*0.4)
   })
   document.getElementById("slideTxt1").addEventListener("click", function () {
-    scrollTo(0, 2000)
+    scrollTo(0, 1800)
   })
   document.getElementById("slideTxt2").addEventListener("click", function () {
-    scrollTo(0, 3400)
+    scrollTo(0, 3200)
   })
 
   window.addEventListener("load", function () {
