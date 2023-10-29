@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const themeBlockCurrentT2 = document.querySelectorAll('h2');
       const themeBlockCurrentT3 = document.querySelectorAll('p');
       const themeImg = document.querySelectorAll('.socialOne');
+      const themeBlockCurrentT4 = document.querySelectorAll('a');
 
       themeBlockCurrentM.forEach(box => {
         box.classList.replace("bg-dark", "bg-light")
@@ -189,6 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       themeBlockCurrentT3.forEach(box => {
         box.style.color = "#000000"
+      })
+      themeBlockCurrentT4.forEach(box => {
+        box.style.color = "black"
       })
       themeImg.forEach(box => {
         // box.style.filter = ""
@@ -208,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const themeBlockCurrentT1 = document.querySelectorAll('h1');
       const themeBlockCurrentT2 = document.querySelectorAll('h2');
       const themeBlockCurrentT3 = document.querySelectorAll('p');
+      const themeBlockCurrentT4 = document.querySelectorAll('a');
 
       themeBlockCurrentM.forEach(box => {
         box.classList.replace("bg-splash", "bg-dark")
@@ -219,6 +224,9 @@ document.addEventListener("DOMContentLoaded", function () {
         box.style.color = "white"
       })
       themeBlockCurrentT3.forEach(box => {
+        box.style.color = "white"
+      })
+      themeBlockCurrentT4.forEach(box => {
         box.style.color = "white"
       })
     }
