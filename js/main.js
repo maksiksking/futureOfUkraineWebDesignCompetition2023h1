@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i1 = 1; i1 < 13; i1++) {
     const stringCurrent = document.getElementById("string" + i1.toString())
     stringLeftList[i1 - 1] = stringCurrent.style.left
-    console.log(stringLeftList)
   }
 
   onmousemove = function (e) {
@@ -46,32 +45,23 @@ document.addEventListener("DOMContentLoaded", function () {
               stringCurrent.style.rotate = (kPre * 0.1 + Math.floor(Math.random() * 90)).toString() + "deg"
             }
 
-            console.log(stringCurrent.style.transform)
-            console.log("hereami")
-
-            // console.log(kPre)
-            // console.log((initString + kPre).toString() + "%")
             break
           case 2:
             kPre = (e.clientX / window.innerWidth) / (0.05)
             stringCurrent.style.left = ((initString + kPre) * 0.5).toString() + "%"
 
-            console.log(kPre)
-            console.log((initString + kPre).toString() + "%")
+
             break;
           case 3:
             kPre = (e.clientX / window.innerWidth) / (0.04)
             stringCurrent.style.left = ((initString + kPre) * 0.5).toString() + "%"
 
-            console.log(kPre)
-            console.log((initString + kPre).toString() + "%")
             break;
           default:
-            console.log("oh");
+            // oh no
         }
       }
       if (e.clientX <= window.innerWidth / 2) {
-        console.log("hella yes")
         switch (Math.floor(Math.random() * 6)) {
           case 1:
             kPre = (e.clientX / window.innerWidth) / (0.005)
@@ -92,25 +82,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            console.log(kPre)
-            console.log((initString + kPre).toString() + "%")
             break
           case 2:
             kPre = (e.clientX / window.innerWidth) / (0.01)
             stringCurrent.style.left = ((initString - kPre) * 0.5).toString() + "%"
 
-            console.log(kPre)
-            console.log((initString + kPre).toString() + "%")
             break;
           case 3:
             kPre = (e.clientX / window.innerWidth) / (0.001)
             stringCurrent.style.left = ((initString - kPre) * 0.5).toString() + "%"
 
-            console.log(kPre)
-            console.log((initString + kPre).toString() + "%")
             break;
           default:
-            console.log("oh");
+            // uh oh
         }
       }
     }
@@ -152,16 +136,12 @@ document.addEventListener("DOMContentLoaded", function () {
       slideOutTxt.style.cursor = "initial"
 
       slideOutTxt.style.marginLeft = "0"
-
-      console.log('YEEEE')
     }
   })
 
   // theme
   let themeBlock0 = document.getElementsByClassName("container-fluid")[0]
   let themeBlock1 = document.getElementById("droneBlock")
-
-  console.log(themeBlock0)
 
   const themeButton = document.getElementById("modeSwip")
   let iSwip = 0
@@ -195,125 +175,136 @@ document.addEventListener("DOMContentLoaded", function () {
         box.style.color = "black"
       })
       themeImg.forEach(box => {
-        // box.style.filter = ""
-      })
+        switch (box) {
+          case themeImg[0]:
+            box.classList.add("ytDark");
+            break;
+          case themeImg[1]:
+            box.classList.add("kofiDark");
+            break;
+          case themeImg[2]:
+            box.classList.add("twitterDark");
+            break;
+          case themeImg[3]:
+            box.classList.add("githubDark");
+            break;
+          case themeImg[4]:
+            box.classList.add("discordDark");
+            break;
+        }
     }
-
-    if (iSwip === 2) {
-      const themeBlockCurrentM = document.querySelectorAll('.bg-light');
-
-      themeBlockCurrentM.forEach(box => {
-        box.classList.replace("bg-light", "bg-splash")
-      })
-    }
-
-    if (iSwip === 3) {
-      const themeBlockCurrentM = document.querySelectorAll('.bg-splash');
-      const themeBlockCurrentT1 = document.querySelectorAll('h1');
-      const themeBlockCurrentT2 = document.querySelectorAll('h2');
-      const themeBlockCurrentT3 = document.querySelectorAll('p');
-      const themeBlockCurrentT4 = document.querySelectorAll('a');
-
-      themeBlockCurrentM.forEach(box => {
-        box.classList.replace("bg-splash", "bg-dark")
-      })
-      themeBlockCurrentT1.forEach(box => {
-        box.style.color = "white"
-      })
-      themeBlockCurrentT2.forEach(box => {
-        box.style.color = "white"
-      })
-      themeBlockCurrentT3.forEach(box => {
-        box.style.color = "white"
-      })
-      themeBlockCurrentT4.forEach(box => {
-        box.style.color = "white"
-      })
-    }
-
-  })
-
-  // lack of Drone hell
-
-  // Liq
-  const liq = document.getElementById("liqAnim")
-  const liqContainer = document.getElementById("liqContainer")
-
-  const circleCursor = document.getElementsByClassName("circleFollow")[0]
-
-  liqContainer.addEventListener("mouseover", function () {
-    liq.play()
-  })
-
-  liqContainer.addEventListener("mouseleave", function () {
-    setTimeout(function () {
-      liq.pause()
-    }, 500)
-  })
-
-  const discordButton = document.getElementById("discordOne")
-
-  function discordCopy() {
-    navigator.clipboard.writeText("@maksiks").then(() => "");
+  )
   }
 
-  discordButton.addEventListener("click", discordCopy)
+  if (iSwip === 2) {
+    const themeBlockCurrentM = document.querySelectorAll('.bg-light');
+    const themeImg = document.querySelectorAll('.socialOne');
 
-  let copyTxt = document.getElementById("discordFloatie")
+    themeBlockCurrentM.forEach(box => {
+      box.classList.replace("bg-light", "bg-splash")
+    })
 
-  discordButton.addEventListener("mouseover", function (e3) {
-    copyTxt.style.display = "initial"
-  })
+    themeImg.forEach(box => {
+      switch (box) {
+        case themeImg[0]:
+          box.classList.remove("ytDark");
+          break;
+        case themeImg[1]:
+          box.classList.remove("kofiDark");
+          break;
+        case themeImg[2]:
+          box.classList.remove("twitterDark");
+          break;
+        case themeImg[3]:
+          box.classList.remove("githubDark");
+          break;
+        case themeImg[4]:
+          box.classList.remove("discordDark");
+          break;
+      }
+    })
+  }
 
-  discordButton.addEventListener("mouseleave", function (e3) {
-    copyTxt.style.display = "none"
-  })
+  if (iSwip === 3) {
+    const themeBlockCurrentM = document.querySelectorAll('.bg-splash');
+    const themeBlockCurrentT1 = document.querySelectorAll('h1');
+    const themeBlockCurrentT2 = document.querySelectorAll('h2');
+    const themeBlockCurrentT3 = document.querySelectorAll('p');
+    const themeBlockCurrentT4 = document.querySelectorAll('a');
 
-  // // Fancy
-  // const fancyITThing = document.getElementById("fancyITThing")
-  // const itContainer = document.getElementById("itContainer")
-  //
-  // window.addEventListener("load", function () {
-  //   fancyITThing.pauseAnimations()
-  // })
-  //
-  // itContainer.addEventListener("mouseover", function () {
-  //   fancyITThing.unpauseAnimations()
-  // })
-  //
-  // itContainer.addEventListener("mouseleave", function () {
-  //   setTimeout(function () {
-  //     fancyITThing.pauseAnimations()
-  //   }, 1000)
-  // })
+    themeBlockCurrentM.forEach(box => {
+      box.classList.replace("bg-splash", "bg-dark")
+    })
+    themeBlockCurrentT1.forEach(box => {
+      box.style.color = "white"
+    })
+    themeBlockCurrentT2.forEach(box => {
+      box.style.color = "white"
+    })
+    themeBlockCurrentT3.forEach(box => {
+      box.style.color = "white"
+    })
+    themeBlockCurrentT4.forEach(box => {
+      box.style.color = "white"
+    })
+  }
 
-  // circle cursor brokeh
+})
 
-  // window.addEventListener("mousemove", function (e2)
-  //   {
-  //     let yPos = e2.pageY
-  //     let xPos = e2.pageX
-  //
-  //     circleCursor.style.top = (yPos-45).toString() + "px"
-  //     circleCursor.style.left = (xPos-45).toString() + "px"
-  //   }
-  // )
+// lack of Drone hell
 
-  document.getElementById("mainPage").addEventListener("click", function () {
-    scrollTo(0, 0)
-  })
-  document.getElementById("slideTxt0").addEventListener("click", function () {
-    scrollTo(0, window.screen.height*0.4)
-  })
-  document.getElementById("slideTxt1").addEventListener("click", function () {
-    scrollTo(0, window.screen.height*1.6)
-  })
-  document.getElementById("slideTxt2").addEventListener("click", function () {
-    scrollTo(0, window.screen.height*2.6)
-  })
+// Liq
+const liq = document.getElementById("liqAnim")
+const liqContainer = document.getElementById("liqContainer")
 
-  window.addEventListener("load", function () {
-    scrollTo(0, document.documentElement.scrollTop || document.body.scrollTop)
-  })
+const circleCursor = document.getElementsByClassName("circleFollow")[0]
 
-});
+liqContainer.addEventListener("mouseover", function () {
+  liq.play()
+})
+
+liqContainer.addEventListener("mouseleave", function () {
+  setTimeout(function () {
+    liq.pause()
+  }, 500)
+})
+
+const discordButton = document.getElementById("discordOne")
+
+function discordCopy() {
+  navigator.clipboard.writeText("@maksiks").then(() => "");
+}
+
+discordButton.addEventListener("click", discordCopy)
+
+let copyTxt = document.getElementById("discordFloatie")
+
+discordButton.addEventListener("mouseover", function (e3) {
+  copyTxt.style.display = "initial"
+})
+
+discordButton.addEventListener("mouseleave", function (e3) {
+  copyTxt.style.display = "none"
+})
+
+document.getElementById("mainPage").addEventListener("click", function () {
+  scrollTo(0, 0)
+})
+document.getElementById("slideTxt0").addEventListener("click", function () {
+  scrollTo(0, window.screen.height * 0.4)
+})
+document.getElementById("slideTxt1").addEventListener("click", function () {
+  scrollTo(0, window.screen.height * 1.6)
+})
+document.getElementById("slideTxt2").addEventListener("click", function () {
+  scrollTo(0, window.screen.height * 2.6)
+})
+
+window.addEventListener("load", function () {
+  scrollTo(0, document.documentElement.scrollTop || document.body.scrollTop)
+})
+
+  console.log("Навігація працює нормально лише на хостингу :)")
+
+})
+;
