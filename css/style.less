@@ -8,6 +8,23 @@ html {
   touch-action: none;
 }
 
+// scrollbar
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   background: #434343 no-repeat;
   width: 100vw;
@@ -16,29 +33,29 @@ body {
   justify-content: center;
 }
 
-/* ===== Scrollbar CSS ===== */
-// this one is yoikned from this codepen:
-// https://codepen.io/stephenpaton-tech/full/JjRvGmY
-/* Firefox */
-* {
-  scrollbar-width: auto;
-  scrollbar-color: #696969 #ffffff;
-}
-
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 16px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #434343;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #696969;
-  border-radius: 10px;
-  border: 3px solid #ffffff;
-}
+///* ===== Scrollbar CSS ===== */
+//// this one is yoikned from this codepen:
+//// https://codepen.io/stephenpaton-tech/full/JjRvGmY
+///* Firefox */
+//* {
+//  scrollbar-width: auto;
+//  scrollbar-color: #696969 #ffffff;
+//}
+//
+///* Chrome, Edge, and Safari */
+//*::-webkit-scrollbar {
+//  width: 16px;
+//}
+//
+//*::-webkit-scrollbar-track {
+//  background: #434343;
+//}
+//
+//*::-webkit-scrollbar-thumb {
+//  background-color: #696969;
+//  border-radius: 10px;
+//  border: 3px solid #ffffff;
+//}
 
 // yeet
 
@@ -106,8 +123,8 @@ body {
   }
   img {
     transition: all 1s cubic-bezier(.29, 1.01, 1, -0.68);;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
     cursor: pointer;
     pointer-events: all;
@@ -204,13 +221,13 @@ body {
   pointer-events: all;
   z-index: 9999;
   position: absolute;
-  width: 2%;
-  height: 20%;
+  width: 5%;
+  height: 40%;
   transform: translate(-50%, -50%);
   top: 50%;
-  margin-left: 98%;
+  margin-left: 94%;
   background: url("../img/SwipSwap.svg") no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .txtBase {
@@ -364,13 +381,14 @@ footer {
 
 #creditTxt {
   position: absolute;
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   font-weight: bold !important;
   font-family: Comfortaa, sans-serif !important;
   left: 50% !important;
   transform: translate(-50%, -50%);
   top: 30% !important;
   width: 100%;
+  padding-bottom: 3%;
 }
 
 #cookieTxt {
@@ -508,3 +526,13 @@ footer {
   background: #0DFFB0 !important;
   background: radial-gradient(at left top, #0DFFB0, #B3FF1B) !important;
 }
+
+.coverUp {
+  position: absolute;
+  z-index: 888;
+  width: 20vw;
+  height: 100%;
+  right: 0;
+  background-color: #b3feb2;
+}
+
