@@ -294,10 +294,10 @@ document.getElementById("slideTxt0").addEventListener("click", function () {
   scrollTo(0, window.screen.height * 0.4)
 })
 document.getElementById("slideTxt1").addEventListener("click", function () {
-  scrollTo(0, window.screen.height * 1.6)
+  scrollTo(0, window.screen.height * 1.4)
 })
 document.getElementById("slideTxt2").addEventListener("click", function () {
-  scrollTo(0, window.screen.height * 2.6)
+  scrollTo(0, window.screen.height * 2.4)
 })
 
 window.addEventListener("load", function () {
