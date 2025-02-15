@@ -203,6 +203,18 @@ document.addEventListener("DOMContentLoaded", function () {
     themeBlockCurrentM.forEach(box => {
       box.classList.replace("bg-light", "bg-splash")
     })
+    themeBlockCurrentT1.forEach(box => {
+      box.style.color = "white"
+    })
+    themeBlockCurrentT2.forEach(box => {
+      box.style.color = "white"
+    })
+    themeBlockCurrentT3.forEach(box => {
+      box.style.color = "white"
+    })
+    themeBlockCurrentT4.forEach(box => {
+      box.style.color = "white"
+    })
 
     themeImg.forEach(box => {
       switch (box) {
